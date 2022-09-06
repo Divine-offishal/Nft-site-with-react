@@ -1,0 +1,41 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "My project",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "author": "Divine Udise",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "grunt": "^1.5.3",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "jit-grunt": "^0.10.0",
+    "lite-server": "^2.6.1",
+    "sass": "^1.54.6",
+    "time-grunt": "^2.0.0"
+  },
+  "dependencies": {
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Divine_offishal@bitbucket.org/divine_offishal/project-3.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/divine_offishal/project-3/issues"
+  },
+  "homepage": "https://bitbucket.org/divine_offishal/project-3#readme"
+}
