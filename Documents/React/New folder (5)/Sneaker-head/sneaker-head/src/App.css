@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+	font-family: 'extraboldoblique';
+	src: url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.eot');
+	src: local('☺'), url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.woff') format('woff'), url('./fonts//Fontspring-DEMO-criteriacf-extraboldoblique.ttf') format('truetype'), url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@layer base {
+    html {
+        font-family: extraboldoblique, system-ui, sans-serif;
+    }
+}
+
+.lightTheme {
+    @apply bg-gradient-to-l from-blue-200 via-slate-50 to-neutral-50
+}
+
+.gradTheme {
+    @apply bg-gradient-to-r from-indigo-900 via-pink-500 to-orange-500 text-neutral-50
+}
+
+.darkTheme {
+    @apply bg-neutral-900 text-white
+}
+
+.btn-primary {
+    @apply bg-neutral-900 text-neutral-50 h-12 w-auto text-2xl font-medium rounded-md p-2
+}
