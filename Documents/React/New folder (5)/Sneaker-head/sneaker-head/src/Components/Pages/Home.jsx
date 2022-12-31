@@ -8,9 +8,10 @@ import Services from "../Services";
 import Top from "../Top";
 import Top2 from "../Top2";
 
+
 const Home = (props) => {
 
-    const {selected, setSelected} = props
+    const {selected, setSelected, clicked, setClicked} = props
     
     return (
         <>
@@ -28,7 +29,9 @@ const Home = (props) => {
                 setSelected={setSelected}/>
             <Discover
                 selected={selected}
-                setSelected={setSelected}/>
+                setSelected={setSelected}
+                clicked={clicked}
+                setClicked={setClicked}/>
             <Services
                 selected={selected}
                 setSelected={setSelected}/>

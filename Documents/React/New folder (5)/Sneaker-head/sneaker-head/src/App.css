@@ -30,5 +30,5 @@
 }
 
 .btn-primary {
-    @apply bg-neutral-900 text-neutral-50 h-12 w-auto text-2xl font-medium rounded-md p-2
+    @apply bg-neutral-900 text-neutral-50 h-12 w-auto text-2xl font-medium rounded-md p-2 hover:bg-green-500 transition-all ease-in-out duration-500
 }

@@ -11,44 +11,30 @@ import Footer from './Footer/Footer'
 import IMAGES from "./Images/Images"
 import Navbar from './Navbar/Navbar'
 import Home from './Components/Pages/Home'
+import PageRoutes from './Routes/Routes'
 // import { IonIcon } from "@ionic/react"
 // import { bowlingBallOutline } from "ionicons/icons"
 
 function App() {
     const [selected, setSelected] = useState('')
+    
+    const [clicked, setClicked] = useState(0)
 
   return (
     <div>
       <Navbar
         selected={selected}
-        setSelected={setSelected}/>
-      <Home 
-        selected={selected}
-        setSelected={setSelected}/>
-      {/* <Hero
-        selected={selected}
-        setSelected={setSelected}/>
-      <Intro1
-        selected={selected}
-        setSelected={setSelected}/>
-      <Intro2
-        selected={selected}
-        setSelected={setSelected}/>
-      <Top
-        selected={selected}
-        setSelected={setSelected}/>
-      <Discover
-        selected={selected}
-        setSelected={setSelected}/>
-      <Services
-        selected={selected}
-        setSelected={setSelected}/>
-      <Top2
-        selected={selected}
-        setSelected={setSelected}/>
-      <Partners
+        setSelected={setSelected}
+        clicked={clicked}
+        setClicked={clicked}/>
+      {/* <Home 
         selected={selected}
         setSelected={setSelected}/> */}
+      <PageRoutes
+        selected={selected}
+        setSelected={setSelected}
+        clicked={clicked}
+        setClicked={setClicked}/>
       <Footer
         selected={selected}
         setSelected={setSelected}/>

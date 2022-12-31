@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import IMAGES from "../Images/Images";
+import { useInView } from "framer-motion";
 
 const Intro2 = (props) => {
 
     const div4Ref = useRef(null)
     const innerRef = useRef(null)
+    const IsInView2 = useInView(div4Ref, { once: true, amount: "some"})
+
 
     useEffect(() => {
         const getTheme = localStorage.getItem("Theme")
@@ -24,11 +27,13 @@ const Intro2 = (props) => {
         }
     }, [props.selected])
 
-    // className="bg-neutral-50 mx-8 lg:flex"
-
     return (
         <div className="bg-blue-50 relative" ref={div4Ref}>
-            <div className="mx-8 lg:flex" ref={innerRef}>
+            <div className="mx-8 lg:flex" ref={innerRef} style={{
+                        transform: IsInView2 ? "none" : "translateX(-200px)",
+                        opacity: IsInView2 ? 1 : 0,
+                        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    }}>
                 <div className="lg:w-1/2 pt-14 ml-6" >
                     <h1 className="text-3xl font-bold">INTRODUCING OUR LATEST COLLECTIONS</h1>
                     <p className="font-medium text-xl my-4">Be the first to discover our latest collections of art from top artists and bid at an affordable rate</p>

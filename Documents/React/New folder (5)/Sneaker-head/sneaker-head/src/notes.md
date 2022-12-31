@@ -10,7 +10,7 @@
 1. Theme palate  ------DONE
 2. Live bid 
 3. Animations by framer
-4. Filter in discovery
+4. Filter in discovery -----DONE
 5. User Auth by Firebase
 6. Notifications by Toastify
 7. Responsiveness  -------DONE

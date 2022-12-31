@@ -19,7 +19,7 @@ const Hero = (props) => {
             div2Ref.current.className=`md:flex ${getTheme} pt-20`
         }
         else{
-            div2Ref.current.className = `md:flex ${props.selected} pt-20`
+            div2Ref.current.className = `md:flex bg-gradient-to-l from-blue-200 via-blue-50 to-neutral-50 pt-20`
         }
     }, [props.selected])
 
@@ -27,8 +27,6 @@ const Hero = (props) => {
         <div className="md:flex bg-gradient-to-l from-blue-200 via-blue-50 to-neutral-50 pt-20" ref={div2Ref}>
             {/* Letters goes here */}
             <HeroComp/>
-        
-
             {/* Images goes here */}
             <HeroComp2/>
         </div>
