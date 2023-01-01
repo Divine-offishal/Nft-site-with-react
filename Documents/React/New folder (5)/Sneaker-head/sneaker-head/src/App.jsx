@@ -21,7 +21,11 @@ function App() {
     const [clicked, setClicked] = useState(0)
 
   return (
-    <div>
+
+
+
+
+    <div className="overflow-hidden">
       <Navbar
         selected={selected}
         setSelected={setSelected}

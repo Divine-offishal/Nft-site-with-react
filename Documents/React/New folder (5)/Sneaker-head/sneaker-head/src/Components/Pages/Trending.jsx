@@ -1,19 +1,36 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import Card from "../subcomponents/Card";
 import IMAGES from "../../Images/Images";
 
-const Trending = () => {
+const Trending = (props) => {
+
+    const trendRef = useRef(null)
+
+    useEffect(() => {
+        const getTheme = localStorage.getItem("Theme")
+        props.setSelected(getTheme)
+        if(getTheme !== null && getTheme === "gradTheme" || getTheme === "darkTheme"){
+            trendRef.current.className=`text-center pt-44 w-screen h-auto ${getTheme} text-neutral-50`
+        }
+        else{
+            trendRef.current.className = `text-center pt-44 w-screen h-auto bg-blue-50 text-neutral-900`
+        }
+    }, [props.selected])
 
     return (
-        <div className="text-center mt-44 w-screen h-screen ">
-            <h1 className="text-5xl font-bold text-neutral-900">Check out our highest selling nft</h1>
-
-            <div className="">
+        <div className="text-center pt-44 " ref={trendRef}>
+            <h1 className="text-5xl font-bold mb-10">Check out our highest selling nft</h1>
+            <div className="flex justify-center">
                 <Card 
                     name="Trippy Head"
                     eth="0.0002"
                     btc="0.0002"
                     image={IMAGES.image1}/>
+            </div>
+
+            <div className="py-6 mx-4">
+                <h1 className="font-medium text-2xl">Description :</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestias!</p>
             </div>
         </div>
     )

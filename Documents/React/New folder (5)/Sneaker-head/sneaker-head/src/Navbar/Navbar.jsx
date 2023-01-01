@@ -6,12 +6,16 @@ import { reorderThreeOutline } from "ionicons/icons"
 import { useRef } from "react";
 import { useEffect } from "react";
 import NavItems from "./Navitems";
+import { cart } from "ionicons/icons"
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = (props) => {
 
     // STATES
     const [open, setOpen] = useState(false)
+    const checker = JSON.parse(localStorage.getItem("cards"))
+
 
     // REFS
     const divRef = useRef(null)
@@ -45,10 +49,22 @@ const Navbar = (props) => {
     return (
         <nav className="md:flex p-10 bg-gradient-to-l from-blue-200 via-slate-50 to-neutral-50 fixed top-0 right-0 left-0 z-30" ref={divRef}>
             {/* SVGS goes here*/}
-            <span className="flex">
-                <Logo2/>
-                <Logo1 className={`mt-2 ml-2 ${props.selected === "gradTheme" && "text-neutral-50"} ${props.selected === "darkTheme" && "text-neutral-50"} ${props.selected === "lightTheme" && "text-neutral-900"}`}/>
-            </span>
+            <NavLink to="/">
+                <span className="flex">
+                    <Logo2/>
+                    <Logo1 className={`mt-2 ml-2 ${props.selected === "gradTheme" && "text-neutral-50"} ${props.selected === "darkTheme" && "text-neutral-50"} ${props.selected === "lightTheme" && "text-neutral-900"}`}/>
+                </span>
+            </NavLink>
+
+            <NavLink to="/collection">
+                    <span className="fixed md:hidden top-8 right-20 z-50">
+                        <IonIcon icon={cart} className="text-4xl"></IonIcon>
+                        <div className="absolute top-[-25px] right-[-10px] bg-red-500 text-neutral-50 rounded-full z-40 h-6 w-6 text-center">
+                            {/* {value} */}
+                            {checker===null? 0 : checker.length}
+                        </div>
+                    </span>
+                </NavLink>
             {/* button to reverse open state */}
             <span className="fixed top-8 right-4 z-50 text-5xl md:hidden" onClick={handleClick}>
                 <IonIcon icon={reorderThreeOutline}></IonIcon>

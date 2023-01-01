@@ -17,7 +17,9 @@ const PageRoutes = (props) => {
                                         setSelected={setSelected}
                                         clicked={clicked}
                                         setClicked={setClicked}/>}/>
-            <Route path="/trending" element={<Trending/>}/>
+            <Route path="/trending" element={<Trending
+                                        selected={selected}
+                                        setSelected={setSelected}/>}/>
             <Route path="/discover" element={<Page3
                                         selected={selected}
                                         setSelected={setSelected}/>}/>

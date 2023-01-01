@@ -18,9 +18,9 @@ const Collection = (props) => {
         const getTheme = localStorage.getItem("Theme")
         setSelected(getTheme)
         if (getTheme === "gradTheme" || getTheme === "darkTheme") {
-            collectRef.current.className = `min-h-screen mt-32 ${getTheme} text-neutral-50`
+            collectRef.current.className = `min-h-screen pt-32 ${getTheme} text-neutral-50`
         }else{
-            collectRef.current.className = "min-h-screen mt-32 bg-blue-50"
+            collectRef.current.className = "min-h-screen pt-32 bg-blue-50 text-neutral-900"
         }
 
         // if (getTheme === "gradTheme") {
@@ -44,7 +44,7 @@ const Collection = (props) => {
     
     if (card !== null){
         const mapped = card.map((item, index) => (
-            <div key={index} className={`w-screen h-auto py-6 my-4 flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
+            <div key={index} className={`w-screen h-auto py-6 md:flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
                 <Card 
                     image={item.image}
                     btc={item.btc}
@@ -57,13 +57,13 @@ const Collection = (props) => {
 
                 <div className="ml-10">
                     <div className="mt-2">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:bg-green-500 transition-all ease-in-out duration-500">Bid</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500">Bid</button>
                     </div>
                     <div className="my-4">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:bg-green-500 transition-all ease-in-out duration-500">Buy</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500">Buy</button>
                     </div>
                     <div className="my-4">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 rounded-md border-2 border-neutral-50 hover:bg-green-500 transition-all ease-in-out duration-500" onClick={() => deleted(item.id)}>Delete Card</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={() => deleted(item.id)}>Delete Card</button>
                     </div>
                         
                 </div>
@@ -71,7 +71,7 @@ const Collection = (props) => {
         ))
         return (
             <div className="min-h-screen pt-32" ref={collectRef}>
-                <h1 className="text-neutral-900 text-center text-4xl font-bold">Bid</h1>
+                <h1 className=" text-center text-4xl font-bold">Bid</h1>
                 {mapped}
             </div>
         )

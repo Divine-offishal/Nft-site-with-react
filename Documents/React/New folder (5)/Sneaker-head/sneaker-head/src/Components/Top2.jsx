@@ -4,11 +4,14 @@ import IMAGES from "../Images/Images"
 import { IonIcon } from "@ionic/react"
 import { caretDownOutline } from "ionicons/icons"
 import { caretUpOutline } from "ionicons/icons"
+import { useInView } from "framer-motion";
 
 
 const Top2 = (props) => {
 
     const top2Ref = useRef(null)
+    const IsInView2 = useInView(top2Ref, { once: true, amount: "some" })
+
 
     useEffect(() => {
         const getTheme = localStorage.getItem("Theme")
@@ -46,7 +49,11 @@ const Top2 = (props) => {
             <h1 className="text-3xl font-bold ml-10 mb-10">
                 Our Top Collection
             </h1>
-            <div className="md:grid grid-cols-3 grid-rows-4 grid-flow-col lg:ml-20 mx-10">
+            <div className="md:grid grid-cols-3 grid-rows-4 grid-flow-col lg:ml-20 mx-10" style={{
+                        // transform: IsInView2 ? "none" : "translateX(-200px)",
+                        opacity: IsInView2 ? 1 : 0,
+                        transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    }}>
                 {mapped}
             </div>
         </div>

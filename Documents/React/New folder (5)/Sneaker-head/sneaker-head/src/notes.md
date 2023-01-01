@@ -8,8 +8,8 @@
         <!-- FEATURES TO BE IMPLEMENTED -->
 
 1. Theme palate  ------DONE
-2. Live bid 
-3. Animations by framer
+2. Live bid ----DONE
+3. Animations by framer ----DONE
 4. Filter in discovery -----DONE
 5. User Auth by Firebase
 6. Notifications by Toastify
