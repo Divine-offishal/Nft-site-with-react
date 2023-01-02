@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "../subcomponents/Card";
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 
 const Collection = (props) => {
@@ -39,7 +41,12 @@ const Collection = (props) => {
             localStorage.removeItem("cards")
             window.location.reload()
         }
+        toast.success("Deleted")
     }
+
+    const handleBid = () => toast.warning("Sorry. Feature is not yet available")
+
+    const handleBuy = () => toast.warning("Sorry. Feature is not yet available")
 
     
     if (card !== null){
@@ -57,10 +64,10 @@ const Collection = (props) => {
 
                 <div className="ml-10">
                     <div className="mt-2">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500">Bid</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBid}>Bid</button>
                     </div>
                     <div className="my-4">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500">Buy</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBuy}>Buy</button>
                     </div>
                     <div className="my-4">
                         <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={() => deleted(item.id)}>Delete Card</button>
@@ -71,6 +78,11 @@ const Collection = (props) => {
         ))
         return (
             <div className="min-h-screen pt-32" ref={collectRef}>
+                <ToastContainer
+                    theme="colored"
+                    position="top-center"
+                    hideProgressBar="false"
+                    autoClose="1000"/>
                 <h1 className=" text-center text-4xl font-bold">Bid</h1>
                 {mapped}
             </div>

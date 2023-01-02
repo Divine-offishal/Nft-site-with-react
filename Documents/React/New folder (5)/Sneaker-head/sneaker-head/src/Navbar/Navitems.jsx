@@ -17,6 +17,8 @@ const NavItems = (props) => {
     const { open, setOpen, selected, setSelected, clicked, setClicked}= props
 
     const checker = JSON.parse(localStorage.getItem("cards"))
+    const getTheme = localStorage.getItem("Theme")
+
 
     useEffect(() => {
 
@@ -76,7 +78,7 @@ const NavItems = (props) => {
                     <h2 className="lg:mx-6 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>Discover</h2>
                 </NavLink>
                 {/* <h2 className="lg:mx-6 md:mx-2">Community</h2> */}
-                <select className="lg:mx-6 md:mx-2 bg-blue-50 h-10 md:my-0 my-10" onChange={handler} ref={selectRef}>
+                <select className="lg:mx-6 md:mx-2 bg-blue-50 h-10 md:my-0 my-10" onChange={handler} ref={selectRef} value={getTheme}>
                     <option defaultValue="theme" disabled="true">Theme</option>
                     <option value="lightTheme">Light Theme</option>
                     <option value="gradTheme" className="bg-pink-500">Grad Theme</option>
@@ -88,7 +90,7 @@ const NavItems = (props) => {
                 <NavLink to="/collection">
                     <span className="relative hidden md:block">
                         <IonIcon icon={cart} className="text-4xl"></IonIcon>
-                        <div className="absolute top-[-25px] right-[-10px] bg-red-500 text-neutral-50 rounded-full z-40 h-6 w-6">
+                        <div className="absolute top-[-15px] right-[-10px] bg-red-500 text-neutral-50 rounded-full z-40 h-6 w-6">
                             {/* {value} */}
                             {checker===null? 0 : checker.length}
                         </div>

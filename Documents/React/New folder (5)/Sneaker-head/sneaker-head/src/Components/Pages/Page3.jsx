@@ -10,19 +10,19 @@ const Page3 = (props) => {
         const getTheme = localStorage.getItem("Theme")
         props.setSelected(getTheme)
         if(getTheme !== null && getTheme === "gradTheme" || getTheme === "darkTheme"){
-            newRef.current.className=`${getTheme} text-center pt-44 w-screen h-auto pb-10`
+            newRef.current.className=`${getTheme} text-center pt-44 w-screen h-auto pb-10 text-neutral-50`
             // selectRef.current.value = {getTheme}
         }
         else{
-            newRef.current.className = "bg-blue-50 text-center pt-44 w-screen h-auto pb-10"
+            newRef.current.className = "bg-blue-50 text-center pt-44 w-screen h-auto pb-10 text-neutral-900"
         }
     }, [props.selected])
 
 
     return (
         <div className="text-center pt-44 w-auto " ref={newRef}>
-            <h1 className="text-5xl font-bold text-neutral-900">Genres</h1>
-            <div className="flex pt-6">
+            <h1 className="text-5xl font-bold">Genres</h1>
+            <div className="md:flex md:px-0 pl-10 pt-6">
                 <Genre 
                     selected={props.selected}
                     text="Apes"/>
@@ -30,7 +30,7 @@ const Page3 = (props) => {
                     selected={props.selected}
                     text="Celebrities"/>
             </div>
-            <div className="flex my-6">
+            <div className="md:flex my-6 md:px-0 pl-10">
                 <Genre 
                     selected={props.selected}
                     text="Cars"/>
@@ -38,7 +38,7 @@ const Page3 = (props) => {
                     selected={props.selected}
                     text="Abstract"/>
             </div>
-            <div className="flex my-6">
+            <div className="md:flex my-6 md:px-0 pl-10">
                 <Genre 
                     selected={props.selected}
                     text="Sneaks"/>
@@ -46,7 +46,7 @@ const Page3 = (props) => {
                     selected={props.selected}
                     text="Song Covers"/>
             </div>
-            <div className="flex my-6">
+            <div className="md:flex my-6 md:px-0 pl-10">
                 <Genre 
                     selected={props.selected}
                     text="Art"/>

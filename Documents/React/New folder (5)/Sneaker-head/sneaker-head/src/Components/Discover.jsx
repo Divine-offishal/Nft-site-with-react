@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState} from "react";
 import DisData from "../data/DisData"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 
 const Discover = (props)=> {
@@ -23,6 +25,7 @@ const Discover = (props)=> {
     const handleClick = (id, e) => {
         const checkLocal = JSON.parse(localStorage.getItem("cards"))
         e.target.disabled = true
+        toast.success("Added Successfully")
         if (checkLocal !== null) {
             let search = test.find(item => item.id === id)
             
@@ -78,6 +81,11 @@ const Discover = (props)=> {
 
     return (
         <div className="bg-blue-50" ref={discRef}>
+            <ToastContainer 
+                theme="colored"
+                position="top-center"
+                hideProgressBar="false"
+                autoClose="1000"/>
             <h1 className="text-3xl font-medium ml-10 pt-20">Discover</h1>
             <div className="flex mt-6">
                 <select className="ml-10 outline-none md:py-2 font-medium text-neutral-900" onChange={handleChange} >
