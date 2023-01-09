@@ -11,6 +11,8 @@
 2. Live bid ----DONE
 3. Animations by framer ----DONE
 4. Filter in discovery -----DONE
-5. User Auth by Firebase
-6. Notifications by Toastify
+5. User Auth by Firebase -----DONE
+6. Notifications by Toastify -----DONE
 7. Responsiveness  -------DONE
+8. Page transitions
+9.Active state on navbar

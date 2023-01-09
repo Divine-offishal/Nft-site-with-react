@@ -51,7 +51,7 @@ const Collection = (props) => {
     
     if (card !== null){
         const mapped = card.map((item, index) => (
-            <div key={index} className={`w-screen h-auto py-6 md:flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
+            <div key={index} className={`w-screen h-auto my-12 md:flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
                 <Card 
                     image={item.image}
                     btc={item.btc}
@@ -91,7 +91,7 @@ const Collection = (props) => {
     }
     else {
         return (
-            <div className="h-screen text-neutral-900 text-center pt-32">
+            <div className="h-screen text-neutral-900 text-center pt-32" ref={collectRef}>
                 <h1 className=" text-4xl font-bold">Collection</h1>
                 <p className="pt-56">There is nothing here...</p>
             </div>

@@ -49,7 +49,7 @@ const Navbar = (props) => {
     return (
         <nav className="md:flex p-10 bg-gradient-to-l from-blue-200 via-slate-50 to-neutral-50 fixed top-0 right-0 left-0 z-30" ref={divRef}>
             {/* SVGS goes here*/}
-            <NavLink to="/">
+            <NavLink to="/home">
                 <span className="flex">
                     <Logo2/>
                     <Logo1 className={`mt-2 ml-2 ${props.selected === "gradTheme" && "text-neutral-50"} ${props.selected === "darkTheme" && "text-neutral-50"} ${props.selected === "lightTheme" && "text-neutral-900"}`}/>

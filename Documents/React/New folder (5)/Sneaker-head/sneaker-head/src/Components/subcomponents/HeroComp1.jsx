@@ -1,6 +1,6 @@
 import React, { useRef} from "react";
 import { useInView } from "framer-motion"
-
+import { ReactComponent as Logo3} from "../../Images/Svg/Vector 9.svg"
 
 
 
@@ -9,6 +9,9 @@ const HeroComp = () => {
 
     const motRef = useRef(null)
     const IsInView = useInView(motRef, {once: true})
+
+    // const getTheme = localStorage.getItem("Theme")
+
 
     return (
         <div className="mt-8 md:w-1/2 md:pr-8 md:ml-10 ml-2" ref={motRef}>
@@ -38,12 +41,12 @@ const HeroComp = () => {
                         <h1 className="md:text-5xl text-6xl font-bold">100k</h1>
                         <p className="text-xl font-medium opacity-70">Artworks</p>
                     </div>
-                    {/* Icon goes here */}
+                    <Logo3 className="md:block hidden"/>
                     <div className="mx-12 md:my-0 my-10">
                         <h1 className="md:text-5xl text-6xl font-bold">50k</h1>
                         <p className="text-xl font-medium opacity-70">Artists</p>
                     </div>
-                    {/* Icon goes here */}
+                    <Logo3 className="md:block hidden"/>
                     <div className="mx-12 md:my-0 my-10">
                         <h1 className="md:text-5xl text-6xl font-bold">500k</h1>
                         <p className="text-xl font-medium opacity-70">Followers</p>

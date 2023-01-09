@@ -4,16 +4,16 @@
 
 
 @font-face {
-	font-family: 'extraboldoblique';
-	src: url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.eot');
-	src: local('☺'), url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.woff') format('woff'), url('./fonts//Fontspring-DEMO-criteriacf-extraboldoblique.ttf') format('truetype'), url('./fonts/Fontspring-DEMO-criteriacf-extraboldoblique.svg') format('svg');
+	font-family: 'extrabold';
+	src: url('./fonts/Fontspring-DEMO-criteriacf-extrabold.eot');
+	src: local('☺'), url('./fonts/Fontspring-DEMO-criteriacf-extrabold.woff') format('woff'), url('./fonts//Fontspring-DEMO-criteriacf-extrabold.ttf') format('truetype'), url('./fonts/Fontspring-DEMO-criteriacf-extrabold.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @layer base {
     html {
-        font-family: extraboldoblique, system-ui, sans-serif;
+        font-family: extrabold, system-ui, sans-serif;
     }
 }
 
@@ -26,9 +26,9 @@
 }
 
 .darkTheme {
-    @apply bg-neutral-900 text-white
+    @apply bg-neutral-900 text-neutral-50
 }
 
 .btn-primary {
-    @apply bg-neutral-900 text-neutral-50 h-12 w-auto text-2xl font-medium rounded-md p-2 hover:bg-green-500 transition-all ease-in-out duration-500
+    @apply bg-neutral-900 text-neutral-50 h-12 w-auto md:text-2xl text-sm font-medium rounded-md p-2 hover:bg-green-500 transition-all ease-in-out duration-500
 }

@@ -12,19 +12,21 @@ import IMAGES from "./Images/Images"
 import Navbar from './Navbar/Navbar'
 import Home from './Components/Pages/Home'
 import PageRoutes from './Routes/Routes'
+import { useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 // import { IonIcon } from "@ionic/react"
 // import { bowlingBallOutline } from "ionicons/icons"
 
 function App() {
     const [selected, setSelected] = useState('')
-    
     const [clicked, setClicked] = useState(0)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+      <Navigate replace to="/signin"/>
+    }, [])
 
   return (
-
-
-
-
     <div className="overflow-hidden">
       <Navbar
         selected={selected}

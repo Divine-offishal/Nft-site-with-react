@@ -5,6 +5,8 @@ import Trending from "../Components/Pages/Trending";
 import Page3 from "../Components/Pages/Page3";
 import Aboutus from "../Components/Pages/Aboutus";
 import Collection from "../Components/Pages/Collection";
+import Signup from "../Components/Pages/Forms/Signup";
+import Login from "../Components/Pages/Forms/Signin";
 
 const PageRoutes = (props) => {
 
@@ -12,7 +14,7 @@ const PageRoutes = (props) => {
 
     return (
         <Routes>
-            <Route path="/" element={<Home 
+            <Route path="/home" element={<Home 
                                         selected={selected}
                                         setSelected={setSelected}
                                         clicked={clicked}
@@ -23,12 +25,16 @@ const PageRoutes = (props) => {
             <Route path="/discover" element={<Page3
                                         selected={selected}
                                         setSelected={setSelected}/>}/>
-            <Route path="/about" element={<Aboutus/>}/>
+            <Route path="/about" element={<Aboutus
+                                        selected={selected}
+                                        setSelected={setSelected}/>}/>
             <Route path="/collection" element={<Collection
                                             clicked={clicked}
                                             setClicked={setClicked}
                                             selected={selected}
                                             setSelected={setSelected}/>}/>
+            <Route path="/" element={<Signup/>}/>
+            <Route path="/login" element={<Login/>}/>
         </Routes>
     )
 }

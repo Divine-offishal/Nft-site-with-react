@@ -1,6 +1,8 @@
 import React, {useRef} from "react";
 import IMAGES from "../../Images/Images";
 import { useInView } from "framer-motion";
+import { ReactComponent as Coin1} from "../../Images/Svg/Coin1.svg"
+import { ReactComponent as Coin2} from "../../Images/Svg/Coin2.svg"
 
 const HeroComp2 = () => {
 
@@ -18,24 +20,38 @@ const HeroComp2 = () => {
                         <img src={IMAGES.image9}/>
                         <h2 className="font-bold pt-4">Gladiator Head</h2>
                         <ul className="text-sm opacity-80 pt-2">
-                            <li>
+                            <div className="flex">
+                                <Coin1 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 ETH
-                            </li>
-                            <li>
+                                </li>
+                            </div>
+                            <div className="flex">
+                                <Coin2 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 BTC
                             </li>
+                            </div>
+                            
+                            
                         </ul>
                     </div>
                     <div className="bg-white p-4 m-2 rounded-xl text-neutral-900">
                         <img src={IMAGES.image7}/>
                         <h2 className="font-bold pt-4">Travis Head</h2>
                         <ul className="text-sm opacity-80 pt-2">
-                            <li>
+                            <div className="flex">
+                                <Coin1 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 ETH
-                            </li>
-                            <li>
+                                </li>
+                            </div>
+                            <div className="flex">
+                                <Coin2 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 BTC
                             </li>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -48,24 +64,36 @@ const HeroComp2 = () => {
                         <img src={IMAGES.image14}/>
                         <h2 className="font-bold pt-4">Lebby Head</h2>
                         <ul className="text-sm opacity-80 pt-2">
-                            <li>
+                            <div className="flex">
+                                <Coin1 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 ETH
-                            </li>
-                            <li>
+                                </li>
+                            </div>
+                            <div className="flex">
+                                <Coin2 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 BTC
                             </li>
+                            </div>
                         </ul>
                     </div>
                     <div className="bg-white p-4 m-2 rounded-xl text-neutral-900">
                         <img src={IMAGES.image5}/>
                         <h2 className="font-bold pt-4">O.G Head</h2>
                         <ul className="text-sm opacity-80 pt-2">
-                            <li>
+                            <div className="flex">
+                                <Coin1 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 ETH
-                            </li>
-                            <li>
+                                </li>
+                            </div>
+                            <div className="flex">
+                                <Coin2 style={{width: "15px", height: "15px"}}/>
+                                <li>
                                 0.0005 BTC
                             </li>
+                            </div>
                         </ul>
                     </div>
                 </div>

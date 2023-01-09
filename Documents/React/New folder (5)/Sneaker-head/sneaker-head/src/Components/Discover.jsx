@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState} from "react";
 import DisData from "../data/DisData"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import {ReactComponent as Coin1} from "../Images/Svg/Coin1.svg"
+import {ReactComponent as Coin2} from "../Images/Svg/Coin2.svg"
 
 
 const Discover = (props)=> {
@@ -46,8 +48,18 @@ const Discover = (props)=> {
         <div key={index} className="h-auto lg:w-46 w-auto bg-neutral-50 md:mx-4 ml-6 mt-4 xl:p-0 p-4 p-2 shrink-0 rounded-lg text-neutral-900">
             <img src={item.image} alt="NFT image" className="w-64 h-64 mt-4 md:mx-auto object-cover object-center rounded-md"/>
             <h1 className="font-bold ml-4 my-2">{item.name}</h1>
-            <p className="font-medium opacity-80 text-sm ml-4">{item.eth}</p>
-            <p className="font-medium opacity-80 text-sm ml-4">{item.btc}</p>
+            <div className="flex text-sm ml-4">
+                    <Coin1 style={{width: "15px",
+                height: "15px"}}/>
+                <p className="font-medium opacity-80 ">{item.eth}</p>
+            </div>
+            <div className="flex ml-4 text-sm">
+                <Coin2 style={{width: "15px",
+                height: "15px"}}/>
+                <p className="font-medium opacity-80 ">{item.btc}</p>
+            </div>
+            
+            
             <button className="disabled:bg-neutral-400 disabled:text-neutral-50 h-6 w-auto px-2 text-sm font-medium lg:ml-44 md:ml-32 bg-neutral-900 text-neutral-50 rounded-xl text-center mb-2 text-opacity-80 focus:border-2 focus:border-blue-400" onClick={(e) => handleClick(item.id, e)} >Place a Bid</button>
         </div>
     ))
@@ -100,7 +112,6 @@ const Discover = (props)=> {
                     </optgroup>
 
                     <optgroup label="Price">
-                        <h1>Price</h1>
                         <option value="price up">Price Up</option>
                         <option value="price down">Price Down</option>
                     </optgroup>

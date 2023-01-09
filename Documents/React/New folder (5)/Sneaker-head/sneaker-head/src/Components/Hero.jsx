@@ -24,7 +24,7 @@ const Hero = (props) => {
     }, [props.selected])
 
     return (
-        <div className="md:flex bg-gradient-to-l from-blue-200 via-blue-50 to-neutral-50 pt-20" ref={div2Ref}>
+        <div ref={div2Ref}>
             {/* Letters goes here */}
             <HeroComp/>
             {/* Images goes here */}

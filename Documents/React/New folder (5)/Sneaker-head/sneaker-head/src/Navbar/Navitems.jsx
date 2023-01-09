@@ -68,7 +68,7 @@ const NavItems = (props) => {
                 <span className="absolute top-8 right-4 text-5xl md:hidden" onClick={handleClick}>
                     <IonIcon icon={closeOutline}></IonIcon>
                 </span>
-                <NavLink to="/">
+                <NavLink to="/home">
                     <h2 className="lg:mx-6 md:mx-2 md:mt-2 mt-44" onClick={() => setOpen(false)}>Home</h2>
                 </NavLink>
                 <NavLink to="/trending">

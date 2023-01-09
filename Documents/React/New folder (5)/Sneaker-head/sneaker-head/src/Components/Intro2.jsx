@@ -40,7 +40,7 @@ const Intro2 = (props) => {
                     <button className="btn-primary mt-4">Explore</button>
                 </div>
                 {/* Images goes here */}
-                <div className="lg:w-1/2 xl:ml-44 lg:ml-32 md:mx-32 ml-6 mt-4">
+                <div className="lg:w-1/2 xl:ml-44 lg:ml-32 md:mx-32 ml-6 mt-4 pb-10">
                     <div className="md:flex ">
                         <img src={IMAGES.image20} className="md:mt-10 md:mb-0 mr-4 md:h-auto h-64 my-8"/>
                         <img src={IMAGES.image21} className="self-start md:mb-0 md:mt-4 mr-4 md:h-auto h-64 my-8"/>
