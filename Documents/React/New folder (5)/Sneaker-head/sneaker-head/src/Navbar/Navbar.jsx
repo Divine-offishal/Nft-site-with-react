@@ -57,7 +57,7 @@ const Navbar = (props) => {
             </NavLink>
 
             <NavLink to="/collection">
-                    <span className="fixed md:hidden top-8 right-20 z-50">
+                    <span className="fixed lg:hidden md:top-10 top-8 md:right-[100px] right-20 z-50">
                         <IonIcon icon={cart} className="text-4xl"></IonIcon>
                         <div className="absolute top-[-25px] right-[-10px] bg-red-500 text-neutral-50 rounded-full z-40 h-6 w-6 text-center">
                             {/* {value} */}
@@ -66,7 +66,7 @@ const Navbar = (props) => {
                     </span>
                 </NavLink>
             {/* button to reverse open state */}
-            <span className="fixed top-8 right-4 z-50 text-5xl md:hidden" onClick={handleClick}>
+            <span className="fixed top-8 right-4 z-50 md:text-6xl text-5xl lg:hidden" onClick={handleClick}>
                 <IonIcon icon={reorderThreeOutline}></IonIcon>
             </span>
 

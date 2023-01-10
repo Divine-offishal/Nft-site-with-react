@@ -30,9 +30,9 @@ const PageRoutes = (props) => {
                                         setSelected={setSelected}/>}/>
             <Route path="/collection" element={<Collection
                                             clicked={clicked}
-                                            setClicked={setClicked}
-                                            selected={selected}
-                                            setSelected={setSelected}/>}/>
+                                                setClicked={setClicked}
+                                                selected={selected}
+                                                setSelected={setSelected}/>}/>
             <Route path="/" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
         </Routes>

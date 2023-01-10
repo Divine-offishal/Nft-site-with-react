@@ -13,9 +13,10 @@ import Navbar from './Navbar/Navbar'
 import Home from './Components/Pages/Home'
 import PageRoutes from './Routes/Routes'
 import { useEffect } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
-// import { IonIcon } from "@ionic/react"
-// import { bowlingBallOutline } from "ionicons/icons"
+import { Route, Navigate, useNavigate, Routes } from 'react-router-dom'
+import Signup from "./Components/Pages/Forms/Signup";
+
+
 
 function App() {
     const [selected, setSelected] = useState('')
@@ -27,12 +28,13 @@ function App() {
     }, [])
 
   return (
+    <>
     <div className="overflow-hidden">
-      <Navbar
+      {/* <Navbar
         selected={selected}
         setSelected={setSelected}
         clicked={clicked}
-        setClicked={clicked}/>
+        setClicked={clicked}/> */}
       {/* <Home 
         selected={selected}
         setSelected={setSelected}/> */}
@@ -41,11 +43,12 @@ function App() {
         setSelected={setSelected}
         clicked={clicked}
         setClicked={setClicked}/>
-      <Footer
+      {/* <Footer
         selected={selected}
-        setSelected={setSelected}/>
+        setSelected={setSelected}/> */}
         
     </div>
+    </>
   )
 }
 

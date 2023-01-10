@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import Card from "../subcomponents/Card";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Navbar from "../../Navbar/Navbar";
+import Footer from "../../Footer/Footer";
 
 
 const Collection = (props) => {
@@ -51,41 +53,47 @@ const Collection = (props) => {
     
     if (card !== null){
         const mapped = card.map((item, index) => (
-            <div key={index} className={`w-screen h-auto my-12 md:flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
+            <div key={index} className={`w-screen h-auto py-10 mt-12 md:flex ${selected === "gradTheme" && "shadow-2xl backdrop-blur-lg bg-gradient-to-r from-neutral-900/60 to-neutral-50/40"} ${selected === "darkTheme" && "bg-neutral-900 border border-neutral-500"} ${selected === "lightTheme" || selected === null && "bg-neutral-50"}`}>
                 <Card 
                     image={item.image}
                     btc={item.btc}
                     eth={item.eth}
                     name={item.name}/>
 
-                {/* <div ref={collectRef}>
-                    <h1>{bidMap}</h1>
-                </div> */}
-
                 <div className="ml-10">
                     <div className="mt-2">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBid}>Bid</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 focus:w-[150px] focus:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBid}>Bid</button>
                     </div>
                     <div className="my-4">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBuy}>Buy</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 mr-10 rounded-md border-2 border-neutral-50 focus:w-[150px] focus:bg-green-500 transition-all ease-in-out duration-500" onClick={handleBuy}>Buy</button>
                     </div>
                     <div className="my-4">
-                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 rounded-md border-2 border-neutral-50 hover:w-[150px] hover:bg-green-500 transition-all ease-in-out duration-500" onClick={() => deleted(item.id)}>Delete Card</button>
+                        <button className="h-auto w-32 p-2 bg-neutral-900 text-neutral-50 rounded-md border-2 border-neutral-50 focus:w-[150px] focus:bg-green-500 transition-all ease-in-out duration-500" onClick={() => deleted(item.id)}>Delete Card</button>
                     </div>
                         
                 </div>
             </div>
         ))
         return (
-            <div className="min-h-screen pt-32" ref={collectRef}>
-                <ToastContainer
-                    theme="colored"
-                    position="top-center"
-                    hideProgressBar="false"
-                    autoClose="1000"/>
-                <h1 className=" text-center text-4xl font-bold">Bid</h1>
-                {mapped}
-            </div>
+            <>
+            <Navbar
+                selected={selected}
+                setSelected={setSelected}
+                clicked={clicked}
+                setClicked={setClicked}/>
+                <div className="min-h-screen pt-32" ref={collectRef}>
+                    <ToastContainer
+                        theme="colored"
+                        position="top-center"
+                        hideProgressBar="false"
+                        autoClose="1000"/>
+                    <h1 className=" text-center text-4xl font-bold">Bid</h1>
+                    {mapped}
+                </div>
+                <Footer
+                    selected={selected}
+                    setSelected={setSelected}/>
+            </>
         )
 
     }

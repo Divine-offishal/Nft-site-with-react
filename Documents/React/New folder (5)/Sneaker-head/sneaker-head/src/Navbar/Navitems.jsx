@@ -61,34 +61,31 @@ const NavItems = (props) => {
 
 
     return (
-        <div className={`md:flex md:ml-auto font-bold text-lg md:h-0 h-screen w-screen bg-neutral-50 md:mt-0 mt-6 md:border-0 border-2 border-blue-300 z-50 fixed md:top-10 top-[-20px] bottom-0 transition-all ease-in-out duration-300 text-center  ${open ? "right-0": "xl:right-[-600px] lg:right-[-350px] md:right-[-300px] right-[-400px]"} ${selected=== "lightTheme" && "text-neutral-900"} ${selected === "gradTheme"&& "md:text-neutral-50 text-neutral-900"} ${selected === "darkTheme"&& "md:text-neutral-50 text-neutral-900"}`}>
-                <NavLink to="/collection">
-                        
-                </NavLink>
-                <span className="absolute top-8 right-4 text-5xl md:hidden" onClick={handleClick}>
+        <div className={`lg:flex md:ml-auto font-bold text-lg lg:h-0 h-screen w-screen bg-neutral-50 md:mt-0 mt-6 md:border-0 border-2 border-blue-300 z-50 fixed lg:top-10 top-[-20px] bottom-0 transition-all ease-in-out duration-300 text-center  ${open ? "right-0": "xl:right-[-600px] lg:right-[-350px] md:right-[-1000px] right-[-400px]"} ${selected=== "lightTheme" && "text-neutral-900"} ${selected === "gradTheme"&& "lg:text-neutral-50 text-neutral-900"} ${selected === "darkTheme"&& "lg:text-neutral-50 text-neutral-900"}`}>
+                <span className="absolute top-8 right-4 text-5xl lg:hidden" onClick={handleClick}>
                     <IonIcon icon={closeOutline}></IonIcon>
                 </span>
                 <NavLink to="/home">
-                    <h2 className="lg:mx-6 md:mx-2 md:mt-2 mt-44" onClick={() => setOpen(false)}>Home</h2>
+                    <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 mt-44" onClick={() => setOpen(false)}>Home</h2>
                 </NavLink>
                 <NavLink to="/trending">
-                    <h2 className="lg:mx-6 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>Trending</h2>
+                    <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 my-10" onClick={() => setOpen(false)}>Trending</h2>
                 </NavLink>
                 <NavLink to="/discover">
-                    <h2 className="lg:mx-6 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>Discover</h2>
+                    <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 my-10" onClick={() => setOpen(false)}>Discover</h2>
                 </NavLink>
                 {/* <h2 className="lg:mx-6 md:mx-2">Community</h2> */}
-                <select className="lg:mx-6 md:mx-2 bg-blue-50 h-10 md:my-0 my-10" onChange={handler} ref={selectRef} value={getTheme}>
+                <select className="lg:mx-4 md:mx-2 bg-blue-50 h-10 md:my-0 my-10" onChange={handler} ref={selectRef} value={getTheme}>
                     <option defaultValue="theme" disabled="true">Theme</option>
                     <option value="lightTheme">Light Theme</option>
                     <option value="gradTheme" className="bg-pink-500">Grad Theme</option>
                     <option value="darkTheme" className="bg-neutral-900 text-neutral-50">Dark Theme</option>
                 </select>
                 <NavLink to="/about">
-                    <h2 className="lg:mx-6 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>About Us</h2>
+                    <h2 className="lg:mx-4 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>About Us</h2>
                 </NavLink>
                 <NavLink to="/collection">
-                    <span className="relative hidden md:block">
+                    <span className="relative hidden md:block mr-6">
                         <IonIcon icon={cart} className="text-4xl"></IonIcon>
                         <div className="absolute top-[-15px] right-[-10px] bg-red-500 text-neutral-50 rounded-full z-40 h-6 w-6">
                             {/* {value} */}
