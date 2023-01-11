@@ -65,23 +65,27 @@ const NavItems = (props) => {
                 <span className="absolute top-8 right-4 text-5xl lg:hidden" onClick={handleClick}>
                     <IonIcon icon={closeOutline}></IonIcon>
                 </span>
-                <NavLink to="/home">
+                <NavLink to="/home" className={({isActive}) => 
+                {return isActive ? "underline decoration-solid decoration-4 underline-offset-8" : ""}}>
                     <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 mt-44" onClick={() => setOpen(false)}>Home</h2>
                 </NavLink>
-                <NavLink to="/trending">
+                <NavLink to="/trending" className={({isActive}) => 
+                {return isActive ? "underline decoration-solid decoration-4 underline-offset-8" : ""}}>
                     <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 my-10" onClick={() => setOpen(false)}>Trending</h2>
                 </NavLink>
-                <NavLink to="/discover">
+                <NavLink to="/discover" className={({isActive}) => 
+                {return isActive ? "underline decoration-solid decoration-4 underline-offset-8" : ""}}>
                     <h2 className="2xl:mx-6 lg:mx-4 lg:mt-2 my-10" onClick={() => setOpen(false)}>Discover</h2>
                 </NavLink>
                 {/* <h2 className="lg:mx-6 md:mx-2">Community</h2> */}
                 <select className="lg:mx-4 md:mx-2 bg-blue-50 h-10 md:my-0 my-10" onChange={handler} ref={selectRef} value={getTheme}>
-                    <option defaultValue="theme" disabled="true">Theme</option>
+                    <option defaultValue="theme" disabled={true}>Theme</option>
                     <option value="lightTheme">Light Theme</option>
                     <option value="gradTheme" className="bg-pink-500">Grad Theme</option>
                     <option value="darkTheme" className="bg-neutral-900 text-neutral-50">Dark Theme</option>
                 </select>
-                <NavLink to="/about">
+                <NavLink to="/about" className={({isActive}) => 
+                {return isActive ? "underline decoration-solid decoration-4 underline-offset-8" : ""}}>
                     <h2 className="lg:mx-4 md:mx-2 md:mt-2 my-10" onClick={() => setOpen(false)}>About Us</h2>
                 </NavLink>
                 <NavLink to="/collection">

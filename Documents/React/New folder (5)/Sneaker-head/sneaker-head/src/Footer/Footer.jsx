@@ -22,36 +22,36 @@ const Footer = (props) => {
     }, [props.selected])
 
     return (
-        <footer className="md:grid grid-cols-4 bg-blue-50 pt-20 pl-10" ref={footerRef}>
+        <footer className="md:grid grid-cols-4 bg-blue-50 pt-20 md:pl-10" ref={footerRef}>
             <div>
                 <div className="flex text-center">
                     <Logo2/>
                     <Logo1 className="mt-2 ml-2"/>
                 </div>
                 <h1 className="font-bold opacity-80 my-2">Create, Sell and enjoy the money</h1>
-                <div className="md:text-left text-center">
+                <div className="md:text-left text-center pr-12">
                     <p className="opacity-70">Follow us</p>
-                    <div className="flex mt-2 pl-32">
+                    <div className="flex mt-2 pl-20 ml-6">
                         <IonIcon icon={logoTwitter} className="md:mr-2 "/>
                         <IonIcon icon={logoInstagram} className="mx-2 "/>
                         <IonIcon icon={logoFacebook} className="mx-2 "/>
                     </div>
                 </div>
             </div>
-            <div className="md:text-left text-center ">
+            <div className="md:text-left text-center pr-12">
                 <h1 className="font-bold opacity-80 text-lg py-4">Marketplace</h1>
                 <p className="text-sm font-medium opacity-80 py-2">Create</p>
                 <p className="text-sm font-medium opacity-80 py-2">Sell</p>
                 <p className="text-sm font-medium opacity-80 py-2">Collect</p>
             </div>
-            <div className="md:text-left text-center ">
+            <div className="md:text-left text-center pr-12">
                 <h1 className="font-bold opacity-80 text-lg py-4">Company</h1>
                 <p className="text-sm font-medium opacity-80 py-2">About us</p>
                 <p className="text-sm font-medium opacity-80 py-2">Community Standard</p>
                 <p className="text-sm font-medium opacity-80 py-2">Blog</p>
                 <p className="text-sm font-medium opacity-80 py-2">Industry</p>
             </div>
-            <div className="md:text-left text-center ">
+            <div className="md:text-left text-center pr-12">
                 <h1 className="font-bold opacity-80 text-lg py-4">Help</h1>
                 <p className="text-sm font-medium opacity-80 py-2">FAQs</p>
                 <p className="text-sm font-medium opacity-80 py-2">Contact us</p>

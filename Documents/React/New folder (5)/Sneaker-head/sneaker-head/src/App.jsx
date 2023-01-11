@@ -15,6 +15,8 @@ import PageRoutes from './Routes/Routes'
 import { useEffect } from 'react'
 import { Route, Navigate, useNavigate, Routes } from 'react-router-dom'
 import Signup from "./Components/Pages/Forms/Signup";
+import "react-toastify/dist/ReactToastify.css"
+
 
 
 

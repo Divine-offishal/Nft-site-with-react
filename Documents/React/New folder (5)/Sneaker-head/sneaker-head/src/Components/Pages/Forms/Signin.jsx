@@ -13,22 +13,40 @@ const Login = () => {
     const navigate = useNavigate()
 
     const Login = (e) => {
+        toast.loading("loading.....", {autoClose:1000})
         e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(() => {
             toast.success("Logged in")
+        })
+        .then((userCredential) => {
             navigate("/home")
         })
         .catch((error) => {
             console.log(error);
-            toast.warning(error)
+            toast.error(error)
+            if(error.code === "auth/wrong-password"){
+                toast.error("Please check the password")
+            }
+            if(error.code === "auth/user-not-found"){
+                toast.error("Please check the Email")
+            }
+            if(error.code === "auth/email-already-in-use"){
+                toast.error("Please login, Email in use")
+            }
         })
     }
+
+    const dismiss = () => toast.dismiss()
     
 
     return (
         <div className="h-screen w-screen pt-44 bg-blue-50">
-            <ToastContainer/>
+            <ToastContainer 
+                theme="colored"
+                position="top-center"
+                hideProgressBar="false"
+                autoClose="2000"/>
             <h1 className="text-center">Log In</h1>
             <div className="w-72 h-56 border border-neutral-900 mx-auto bg-neutral-50 rounded-lg">
                 {/* {error ? <div>{error}</div> : null} */}
@@ -40,6 +58,7 @@ const Login = () => {
                         value={email}
                         placeholder="Your Email"
                         required
+                        onClick={dismiss}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
@@ -49,6 +68,7 @@ const Login = () => {
                         value={password}
                         placeholder="Your Password"
                         required
+                        onClick={dismiss}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button type="submit" className="ml-20 bg-neutral-900 hover:bg-green-700 focus:border focus:border-blue-900 text-neutral-50 rounded-md p-2 mt-4">Submit</button>

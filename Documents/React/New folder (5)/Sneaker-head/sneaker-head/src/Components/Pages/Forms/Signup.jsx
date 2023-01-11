@@ -5,6 +5,8 @@ import { auth } from "../../../firebase"
 import { useRef,  useEffect } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import {toast, ToastContainer} from "react-toastify"
+// import "react-toastify/dist/ReactToastify.css"
+
 
 
 const Signup = () => {
@@ -23,17 +25,26 @@ const Signup = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             toast.success("Sign in successful")
+        })
+        .then(() => {
             navigate("/login")
         })
         .catch((error) => {
             console.log(error);
-            toast.warning(error)
+            // toast.error(error)
+            if(error.code === "auth/email-already-in-use"){
+                toast.error("Please login, Email in use")
+            }
         })
     }
 
     return (
         <div className="h-screen w-screen pt-44 z-50 bg-blue-50">
-            <ToastContainer/>
+            <ToastContainer 
+                theme="colored"
+                position="top-center"
+                hideProgressBar="false"
+                autoClose="2000"/>
             <h1 className="text-center">Sign Up</h1>
             <div className="w-72 h-56 border border-neutral-900 mx-auto bg-neutral-50 rounded-lg">
                 {/* {error ? <div>{error}</div> : null} */}

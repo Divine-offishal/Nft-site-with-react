@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState} from "react";
 import DisData from "../data/DisData"
 import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 import {ReactComponent as Coin1} from "../Images/Svg/Coin1.svg"
 import {ReactComponent as Coin2} from "../Images/Svg/Coin2.svg"
 

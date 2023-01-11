@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "../subcomponents/Card";
 import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 
@@ -99,10 +98,20 @@ const Collection = (props) => {
     }
     else {
         return (
-            <div className="h-screen text-neutral-900 text-center pt-32" ref={collectRef}>
-                <h1 className=" text-4xl font-bold">Collection</h1>
-                <p className="pt-56">There is nothing here...</p>
-            </div>
+            <>
+            <Navbar
+                selected={selected}
+                setSelected={setSelected}
+                clicked={clicked}
+                setClicked={setClicked}/>
+                <div className="h-screen text-neutral-900 text-center pt-32" ref={collectRef}>
+                    <h1 className=" text-4xl font-bold">Collection</h1>
+                    <p className="pt-56">There is nothing here...</p>
+                </div>
+                <Footer
+                    selected={selected}
+                    setSelected={setSelected}/>
+            </>
         )
     }
 }
